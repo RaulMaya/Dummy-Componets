@@ -1,3 +1,4 @@
+//import Table from "../components/Table";
 import SortableTable from "../components/sortableTable";
 
 const fruits = [

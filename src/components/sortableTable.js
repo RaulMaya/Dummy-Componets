@@ -1,4 +1,3 @@
-import { func } from "prop-types";
 import Table from "./Table";
 import { useState } from "react";
 import { FaSort, FaSortDown, FaSortUp } from "react-icons/fa6";
@@ -9,6 +8,11 @@ function SortableTable(props) {
     const [sortBy, setSortBy] = useState(null)
 
     const handleClick = (label) => {
+        if (sortBy && label !== sortBy) {
+            setSortOrder("asc")
+            setSortBy(label)
+            return true
+        }
         if (sortOrder === null) {
             setSortOrder("asc")
             setSortBy(label)
